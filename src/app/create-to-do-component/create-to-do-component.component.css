@@ -1,0 +1,13 @@
+form{
+    width: 350px;
+    /* justify-content: center; */
+    text-align: center;
+    margin: 70px auto;}
+.col-sm-10{
+    display: grid;
+    text-align: center
+}
+form label{
+    font-size: 19px;
+    font-weight: 600;
+}

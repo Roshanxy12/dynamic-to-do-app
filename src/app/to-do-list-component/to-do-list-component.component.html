@@ -1,0 +1,33 @@
+<div class="row">
+
+ <table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Action</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Repeating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ptask of data;let i = index">
+            <td><input type="checkbox" (change)="remove(i,ptask)"></td>
+            <td>{{ptask.taskName}} </td>
+            <td>{{ptask.taskDesc}}
+            </td>
+            <td> {{ptask.isRepeating}}
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+
+
+<div *ngIf="doneTaskarraylist.length">
+    <h3>Done Task</h3>
+    <app-done-list-component (onDatePicked)="doSomething($event)" [data]="doneTaskarraylist"></app-done-list-component>
+</div>
+
+</div> 

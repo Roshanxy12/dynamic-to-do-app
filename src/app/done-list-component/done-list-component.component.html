@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Action</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Repeating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of data;let i = index">
+            <td> <a (click)="removefromdone(task,i)">Mark as undone</a></td>
+            <td>{{task.taskName}} </td>
+            <td>{{task.taskDesc}}
+            </td>
+            <td> {{task.isRepeating}}
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>

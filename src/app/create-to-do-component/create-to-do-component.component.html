@@ -1,0 +1,49 @@
+<form [formGroup]="form">
+    <div class="form-group row">
+        <!-- <label for="staticEmail" class="col-sm-2 col-form-label">Task Name</label> -->
+        <div class="col-sm-10">
+            <label for="staticEmail" class="col-form-label">Task Name</label>
+
+            <input type='text' placeholder="Task Name" formControlName="taskName"
+                class="input_control input_control--text input_control--validate input_control--large">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <!-- <label for="staticEmail" class="col-sm-12 col-form-label">Description</label> -->
+        <div class="col-sm-10">
+            <label for="staticEmail" class=" col-form-label">Description</label>
+
+            <textarea cols="30" rows="5" placeholder="Task Description"
+                class="input_control input_control--text input_control--validate input_control--large"
+                formControlName="taskDesc"></textarea>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <label for="staticEmail" class="col-form-label">Repeating</label>
+
+            <select id="signalType" class="input_control input_control--m  input_control--select"
+                formControlName="isRepeating">
+                <option value="">Choose your city</option>
+                <option *ngFor="let signal of signals" [value]="signal">{{signal}}</option>
+            </select>
+        </div>
+    </div>
+
+
+
+
+
+</form>
+
+
+
+
+
+<div *ngIf="todoTaskarraylist.length">
+<h3>To do Task</h3>
+<app-to-do-list-component  [data]="todoTaskarraylist"></app-to-do-list-component>
+</div>
